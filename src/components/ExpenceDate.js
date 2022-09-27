@@ -1,3 +1,5 @@
+import './ExpenceDate.css'
+
 const ExpenceData = (props) => {
 
     const mounth = props.date.toLocaleString('en-US', { month: 'long' })
@@ -5,10 +7,10 @@ const ExpenceData = (props) => {
     const year = props.date.getFullYear()
 
     return (
-        <div>
-            <div>{mounth}</div>
-            <div>{year}</div>
-            <div>{day}</div>
+        <div className="expense-date">
+            <div className="expense-date__month">{mounth}</div>
+            <div className="expense-date__year">{year}</div>
+            <div className="expense-date__day">{day}</div>
         </div>
     )
 }

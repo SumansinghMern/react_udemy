@@ -1,6 +1,8 @@
-import ExpenceItem from "./components/ExpenceItem";
+import React from 'react'
+import Expences from "./components/Expences";
 
 function App() {
+  
   const expenses = [
     {
       id: 'e1',
@@ -23,17 +25,19 @@ function App() {
     },
   ];
 
+  return React.createElement(
+    'div',
+    {},
+    React.createElement('h2', {},"Let's get started!"),
+    React.createElement(Expences,{expenses:expenses})
+  )
 
-  return (
-    <div>
-      <h2>Let's get started!</h2>
-      {
-        expenses.map((expense,index) => {
-          return <ExpenceItem expense={expense} key={expense.id}></ExpenceItem>
-        })
-      }
-    </div>
-  );
+  // return (
+  //   <div>
+  //     <h2>Let's get started!</h2>
+  //     <Expences expenses={expenses}/>
+  //   </div>
+  // );
 }
 
 export default App;
